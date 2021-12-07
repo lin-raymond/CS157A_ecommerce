@@ -216,5 +216,8 @@ To pull the docker image with the configured tables and sample data:
 docker pull linraymond/cs157a_sql_database_with_sample_data
 ```
 
-Both docker containers have a password for the root user set to "changeme-security" without quotes. It is highly recommended to change the root password to something more secure.
+Both docker containers have a password for the root user set to "changeme-security" without quotes. It is highly recommended to change the root password to something more secure. To access the mysql application in docker (Replace fcd25b07f88d with your docker container's id or name):
 
+```
+docker exec -it fcd25b07f88d mysql -uroot -p
+```
