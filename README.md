@@ -225,12 +225,16 @@ docker pull linraymond/cs157a_sql_database_with_sample_data
 
 To start the docker image:
 
-```
-docker run --name=cs157a-sql-database -e MYSQL_ROOT_PASSWORD=changeme-security -e MYSQL_USER=user -e MYSQL_PASSWORD=changeme-security -dp 3306:3306 --expose 3306 -d cs157a_sql_database_no_sample_data:latest
-```
+For image without sample data:
 
 ```
-docker run --name=cs157a-sql-database -e MYSQL_ROOT_PASSWORD=changeme-security -e MYSQL_USER=user -e MYSQL_PASSWORD=changeme-security -dp 3306:3306 --expose 3306 -d cs157a_sql_database_with_sample_data:latest
+docker run --name=cs157a-sql-database -e MYSQL_ROOT_PASSWORD=changeme-security -e MYSQL_USER=user -e MYSQL_PASSWORD=changeme-security -dp 3306:3306 --expose 3306 -d linraymond/cs157a_sql_database_no_sample_data:latest
+```
+
+For image with sample data:
+
+```
+docker run --name=cs157a-sql-database -e MYSQL_ROOT_PASSWORD=changeme-security -e MYSQL_USER=user -e MYSQL_PASSWORD=changeme-security -dp 3306:3306 --expose 3306 -d linraymond/cs157a_sql_database_with_sample_data:latest
 ```
 
 Both docker containers have a password for the root user set to "changeme-security" without quotes. It is highly recommended to change the root password to something more secure. To access the mysql application in docker:
