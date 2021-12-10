@@ -76,6 +76,7 @@ CREATE TABLE PRODUCTS_ORDER (
 To add some sample data, use these SQL statements:
 
 ```
+USE cs157a_ecommerce;
 INSERT INTO CUSTOMER (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) VALUES
     ('Alfred', 'Sendo', 'alfred.sendo@email.com', 'password1'),
     ('Andrew', 'Shido', 'andrew.shido@email.com', 'password2'),
@@ -127,6 +128,12 @@ VALUES
 ```
 
 Queries:
+
+All queries use the cs157a_ecommerce database.
+
+```
+USE cs157a_ecommerce;
+```
 
 For the order history view, show all the order id numbers and dates that the customer is associated with. 
 
@@ -226,8 +233,10 @@ docker run --name=cs157a-sql-database -e MYSQL_ROOT_PASSWORD=changeme-security -
 docker run --name=cs157a-sql-database -e MYSQL_ROOT_PASSWORD=changeme-security -e MYSQL_USER=user -e MYSQL_PASSWORD=changeme-security -dp 3306:3306 --expose 3306 -d cs157a_sql_database_with_sample_data:latest
 ```
 
-Both docker containers have a password for the root user set to "changeme-security" without quotes. It is highly recommended to change the root password to something more secure. To access the mysql application in docker (Replace fcd25b07f88d with your docker container's id or name):
+Both docker containers have a password for the root user set to "changeme-security" without quotes. It is highly recommended to change the root password to something more secure. To access the mysql application in docker:
 
 ```
-docker exec -it fcd25b07f88d mysql -uroot -p
+docker exec -it cs157a-sql-database mysql -uroot -p
 ```
+
+It is possible to have any any other SQL application access the database.
