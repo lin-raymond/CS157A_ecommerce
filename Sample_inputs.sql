@@ -1,3 +1,4 @@
+USE cs157a_ecommerce;
 INSERT INTO CUSTOMER (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) VALUES
     ('Alfred', 'Sendo', 'alfred.sendo@email.com', 'password1'),
     ('Andrew', 'Shido', 'andrew.shido@email.com', 'password2'),
